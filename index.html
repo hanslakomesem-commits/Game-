@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070913">
+  <meta name="description" content="ZAIN AI LIVE RACING — game interaktif dikendalikan gift TikTok LIVE.">
+  <title>ZAIN AI LIVE RACING</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="masthead">
+      <div class="brand"><div class="logo">Z<span>⚡</span></div><div><strong>ZAIN AI <em>LIVE RACING</em></strong><small>THE VIEWERS CONTROL THE RACE</small></div></div>
+      <button id="settingsBtn" class="icon-btn" aria-label="Pengaturan">⚙️</button>
+    </header>
+    <section class="statusbar">
+      <span class="status" id="connectionStatus"><i></i> MODE DEMO</span>
+      <span id="tiktokAccount">@akun_tiktok_kamu</span>
+      <span class="pill">🏎️ RACING LIVE</span>
+    </section>
+    <section class="gameframe" aria-label="Arena permainan">
+      <canvas id="racingCanvas" aria-label="Game balap interaktif"></canvas>
+      <div class="hud">
+        <div class="scoretop"><div><small>JARAK TEMPUH</small><strong id="distance">00000 <span>m</span></strong></div><div class="score-right"><small>KECEPATAN</small><strong id="speed">0 <span>KM/J</span></strong></div></div>
+        <div class="progress-track"><div id="nitroFill"></div></div>
+        <div class="messagebar"><strong id="screenMessage">MENUNGGU KENDALI PENONTON</strong><small id="hintMessage">Gift menentukan gerakan mobil!</small></div>
+      </div>
+      <div class="gift-popup" id="giftPopup" aria-live="polite"></div>
+      <div id="pauseIndicator" class="pause-indicator" hidden>⏸ GAME DIJEDA</div>
+      <div class="game-bottom"><span>🏁 <b id="crashes">0</b> TABRAKAN</span><span class="nos">NOS <b id="nosValue">0%</b></span></div>
+    </section>
+    <section class="guide">
+      <div class="section-head"><strong>🎁 GIFT = KONTROL MOBIL</strong><span>KLIK UNTUK TES</span></div>
+      <div class="giftgrid" id="giftGrid">
+        <button data-action="forward"><span>🌹</span><b>MAJU 2D</b><small>Mawar</small></button>
+        <button data-action="left"><span>🍦</span><b>KIRI</b><small>Es Krim</small></button>
+        <button data-action="right"><span>❤️</span><b>KANAN</b><small>Hati</small></button>
+        <button data-action="reverse"><span>🌶️</span><b>MUNDUR</b><small>Cabai</small></button>
+        <button data-action="nitro"><span>🚀</span><b>NITRO</b><small>Gift spesial</small></button>
+      </div>
+      <div class="bonusgrid" aria-label="Fitur gift tambahan">
+        <button data-action="wake"><span>🌌</span> WAKE ME UP</button>
+        <button data-action="changeCar"><span>🐬</span> GANTI MOBIL</button>
+        <button data-action="pause"><span>🎮</span> JEDA / LANJUT</button>
+      </div>
+      <div class="helper">Mode demo: tombol di atas atau keyboard ↑ ← → ↓ (Spasi untuk nitro). Pada LIVE asli, gift akan otomatis menggerakkan mobil.</div>
+    </section>
+    <section class="eventfeed"><div class="section-head"><strong>📣 AKTIVITAS LIVE</strong><span id="viewerCount">SIMULASI AKTIF</span></div><div id="events" class="events"><p class="empty">Belum ada gift. Coba tekan tombol gift!</p></div></section>
+    <footer>© ZAIN.NET • Prototype V1.1 • Dirancang untuk TikTok LIVE interaktif</footer>
+  </main>
+  <dialog id="settingsDialog" class="settings">
+    <form method="dialog"><div class="modalhead"><h2>Pengaturan koneksi</h2><button class="close" aria-label="Tutup">✕</button></div></form>
+    <p>Game bisa dicoba offline. Agar menerima gift asli, jalankan backend Node.js dan isi alamat WebSocket yang tersedia dari server.</p>
+    <label for="socketUrl">Alamat WebSocket backend</label>
+    <input id="socketUrl" placeholder="wss://domain-backend.com/events" autocomplete="off" spellcheck="false">
+    <button id="connectBtn" class="primary">HUBUNGKAN LIVE</button>
+    <button id="demoBtn" class="secondary">GUNAKAN MODE DEMO</button>
+    <p class="fineprint">Username TikTok disetel di environment backend (<code>TIKTOK_USERNAME</code>). Jangan menempelkan cookie atau password TikTok di sini. Koneksi real-time membutuhkan server yang berjalan.</p>
+  </dialog>
+  <script src="./game.js" defer></script>
+</body>
+</html>

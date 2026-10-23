@@ -1,0 +1,19 @@
+{
+  "name": "zain-ai-live-racing",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Game web yang dikendalikan oleh gift TikTok LIVE — prototipe.",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/game.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.1",
+    "tiktok-live-connector": "^2.5.0"
+  }
+}

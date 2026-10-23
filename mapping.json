@@ -1,0 +1,20 @@
+{
+  "rose": "forward",
+  "mawar": "forward",
+  "ice cream": "left",
+  "es krim": "left",
+  "finger heart": "reverse",
+  "finger hearts": "reverse",
+  "tiny diny": "reverse",
+  "heart": "right",
+  "hati": "right",
+  "love you": "right",
+  "tiktok": "nitro",
+  "rocket": "nitro",
+  "galaxy": "wake",
+  "chili": "reverse",
+  "pepper": "reverse",
+  "icecream": "left",
+  "dolphin": "changeCar",
+  "gamepad": "pause"
+}
